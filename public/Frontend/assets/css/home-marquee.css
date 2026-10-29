@@ -1,0 +1,135 @@
+.home-brand-marquee {
+    position: relative;
+    z-index: 4;
+    overflow: hidden;
+    padding: 34px 0 18px;
+    background: #fffaf3;
+    border-top: 1px solid #f0dfd2;
+    border-bottom: 1px solid #f0dfd2;
+}
+
+.home-brand-marquee::before,
+.home-brand-marquee::after {
+    content: "";
+    position: absolute;
+    z-index: 6;
+    top: 88px;
+    bottom: 0;
+    width: clamp(55px, 9vw, 140px);
+    pointer-events: none;
+}
+
+.home-brand-marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, #fffaf3 12%, rgba(255,250,243,.92) 35%, rgba(255,250,243,0) 100%);
+    box-shadow: 18px 0 28px rgba(83,18,38,.04);
+}
+
+.home-brand-marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, #fffaf3 12%, rgba(255,250,243,.92) 35%, rgba(255,250,243,0) 100%);
+    box-shadow: -18px 0 28px rgba(83,18,38,.04);
+}
+
+.brand-heading {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.brand-heading > span {
+    display: block;
+    margin-bottom: 7px;
+    color: #9a5c28;
+    font: 600 11px/1.4 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.brand-heading h2 {
+    margin: 0;
+    color: #3f1520;
+    font: 600 clamp(24px, 2.6vw, 34px)/1.25 'Sora', sans-serif;
+    letter-spacing: -.03em;
+}
+
+.hero-section .slider-controls {
+    margin-bottom: 0;
+    padding-bottom: 22px;
+}
+
+.brand-track {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    width: max-content;
+    will-change: transform;
+    animation: brandMarquee 38s linear infinite;
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+}
+
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-shrink: 0;
+    padding-block: 2px;
+}
+
+.brand-track > span {
+    flex: 0 0 185px;
+    margin-left: 28px;
+    color: #6b4b52;
+    font: 600 12px/1.45 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.brand-track .brand-item {
+    flex: 0 0 108px;
+    width: 108px;
+    height: 56px;
+    background: #fff;
+    border-color: #eee1d7;
+}
+
+.brand-track .brand-item-dell {
+    background: #531226;
+    border-color: #531226;
+}
+
+.brand-track .brand-item-dell img {
+    max-height: 42px;
+}
+
+.home-brand-marquee:hover .brand-track {
+    animation-play-state: paused;
+}
+
+@keyframes brandMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-33.333333% - 7.333px)); }
+}
+
+@media (max-width: 767px) {
+    .home-brand-marquee { padding: 26px 0 14px; }
+    .brand-heading { margin-bottom: 17px; }
+    .brand-heading h2 { font-size: 24px; }
+    .brand-track, .brand-group { gap: 14px; }
+    .brand-track { animation-duration: 31s; }
+    .brand-track > span { flex-basis: 150px; margin-left: 14px; font-size: 10px; }
+    .brand-track .brand-item { flex-basis: 86px; width: 86px; height: 48px; }
+    .home-brand-marquee::before,
+    .home-brand-marquee::after { top: 76px; width: 52px; }
+}
+
+@media (max-width: 767px) {
+    @keyframes brandMarquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-33.333333% - 4.667px)); }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brand-track { animation-play-state: paused; }
+}

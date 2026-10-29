@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteBase /
+
+# Force non-www (https is already enforced at the CDN; avoid an https rule here to prevent redirect loops)
+RewriteCond %{HTTP_HOST} ^www\.praveshcomputers\.com$ [NC]
+RewriteRule ^(.*)$ https://praveshcomputers.com/$1 [L,R=301]
+
+# Redirect all requests to public directory
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L,L]
+
+# Security: disable access to .env, .htaccess, etc.
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php
+</IfModule>

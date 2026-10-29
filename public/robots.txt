@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /login
+Disallow: /register$
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /complaint/list
+Disallow: /contact/list
+Disallow: /optimize-clear
+
+# AI search and assistant crawlers are welcome on public pages
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Google-Extended
+Allow: /
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /login
+Disallow: /register$
+Disallow: /complaint/list
+Disallow: /contact/list
+Disallow: /optimize-clear
+
+Sitemap: https://praveshcomputers.com/sitemap.xml

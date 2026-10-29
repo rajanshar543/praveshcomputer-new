@@ -1,0 +1,202 @@
+.hero-section {
+    padding-top: 0;
+    background: #35101a;
+}
+
+.hero-slider {
+    min-height: 760px;
+}
+
+.hero-slide {
+    overflow: hidden;
+}
+
+.hero-slide .hero-grid {
+    position: relative;
+    display: block;
+    min-height: 760px;
+}
+
+.hero-slide .hero-visual {
+    position: absolute;
+    z-index: 0;
+    inset: 0 calc((1180px - 100vw) / 2);
+    width: 100vw;
+    max-width: none;
+    padding: 0;
+}
+
+.hero-slide .hero-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(43, 7, 18, .96) 0%, rgba(64, 12, 28, .91) 39%, rgba(77, 17, 35, .64) 65%, rgba(53, 12, 26, .42) 100%),
+        linear-gradient(0deg, rgba(40, 7, 17, .52), rgba(40, 7, 17, .08) 48%);
+}
+
+.hero-slide .hero-image-wrap,
+.home-service-slide .hero-image-wrap {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.hero-slide .hero-image-wrap > img,
+.home-service-slide .hero-image-wrap > img {
+    width: 100%;
+    height: 100%;
+    min-height: 760px;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-slide .hero-copy {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min(720px, 67%);
+    min-height: 760px;
+    padding: 82px 0 68px;
+}
+
+.hero-slide .hero-copy h1,
+.hero-slide .hero-title {
+    max-width: 720px;
+    margin-top: 18px;
+}
+
+.hero-slide .hero-lead {
+    max-width: 650px;
+}
+
+.hero-slide .hero-actions {
+    justify-content: flex-start;
+}
+
+.hero-slide .hero-proof {
+    width: min(650px, 100%);
+    min-height: 70px;
+    margin-top: 38px;
+    padding-top: 23px;
+}
+
+.hero-slide .visual-tag {
+    display: none;
+}
+
+.slider-controls {
+    margin-top: -52px;
+    padding-bottom: 27px;
+}
+
+.hero-slide.is-active .hero-visual {
+    animation: fullHeroImage 1s ease both;
+}
+
+.hero-slide.is-active .hero-copy > * {
+    animation: fullHeroContent .72s ease both;
+}
+
+@keyframes fullHeroImage {
+    from { opacity: .68; transform: scale(1.035); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fullHeroContent {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1190px) {
+    .hero-slide .hero-visual {
+        inset-inline: calc((100% - 100vw) / 2);
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-slider,
+    .hero-slide .hero-grid {
+        min-height: 800px;
+    }
+
+    .hero-slide .hero-image-wrap > img,
+    .home-service-slide .hero-image-wrap > img {
+        min-height: 800px;
+    }
+
+    .hero-slide .hero-visual::after {
+        background: linear-gradient(90deg, rgba(44, 8, 20, .94), rgba(67, 14, 31, .79));
+    }
+
+    .hero-slide .hero-copy {
+        width: 82%;
+        min-height: 800px;
+        padding-block: 70px;
+        text-align: left;
+    }
+
+    .hero-slide .eyebrow,
+    .hero-slide .hero-actions {
+        justify-content: flex-start;
+    }
+
+    .hero-slide .hero-lead {
+        margin-inline: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-slider,
+    .hero-slide .hero-grid {
+        min-height: 790px;
+    }
+
+    .hero-slide .hero-image-wrap > img,
+    .home-service-slide .hero-image-wrap > img {
+        min-height: 790px;
+    }
+
+    .hero-slide .hero-visual::after {
+        background: linear-gradient(90deg, rgba(47, 8, 21, .95), rgba(69, 15, 32, .82));
+    }
+
+    .hero-slide .hero-copy {
+        width: 100%;
+        min-height: 790px;
+        padding: 60px 0 72px;
+    }
+
+    .hero-slide .hero-proof {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-slider,
+    .hero-slide .hero-grid {
+        min-height: 750px;
+    }
+
+    .hero-slide .hero-image-wrap > img,
+    .home-service-slide .hero-image-wrap > img {
+        min-height: 750px;
+    }
+
+    .hero-slide .hero-copy {
+        min-height: 750px;
+        padding-top: 50px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide.is-active .hero-visual,
+    .hero-slide.is-active .hero-copy > * {
+        animation: none;
+    }
+}

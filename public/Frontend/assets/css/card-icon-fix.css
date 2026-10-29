@@ -1,0 +1,163 @@
+/* Consistent, more visible icons across card components */
+.inner-service-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    font-size: 26px;
+    margin-bottom: 28px;
+}
+
+.inner-service-card {
+    min-height: 300px;
+    padding: 30px;
+}
+
+.inner-service-card h3 {
+    margin-bottom: 13px;
+    font-size: 22px;
+    line-height: 1.32;
+    color: #32131c !important;
+}
+
+.inner-service-card p {
+    min-height: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.72;
+    color: #6d5960 !important;
+}
+
+.inner-service-card .inner-card-link {
+    font-size: 14px;
+    color: #6a1731 !important;
+}
+
+.inner-service-card .inner-card-link:hover {
+    color: #a86428 !important;
+}
+
+.inner-service-card .inner-service-icon,
+.inner-service-card .inner-service-icon i {
+    color: #741a36 !important;
+}
+
+.value-grid article > i {
+    width: 62px;
+    height: 62px;
+    border-radius: 14px;
+    font-size: 25px;
+    margin-bottom: 28px;
+}
+
+.value-grid article {
+    min-height: 255px;
+    padding: 30px;
+}
+
+.value-grid h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+    line-height: 1.35;
+    color: #32131c !important;
+}
+
+.value-grid p {
+    font-size: 15.5px;
+    line-height: 1.72;
+    color: #6d5960 !important;
+}
+
+.value-grid article > i {
+    color: #741a36 !important;
+}
+
+.contact-card-grid > a > span {
+    width: 58px;
+    height: 58px;
+    border-radius: 13px;
+    font-size: 23px;
+}
+
+.contact-card-grid .contact-phone-card > span i {
+    font-size: 23px;
+}
+
+.visit-note > i {
+    min-width: 28px;
+    font-size: 25px;
+}
+
+.service-lists h3 i {
+    min-width: 25px;
+    font-size: 22px;
+}
+
+.aside-call > i {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    font-size: 18px;
+}
+
+.service-card .service-icon {
+    width: 62px;
+    height: 62px;
+    font-size: 25px;
+}
+
+.benefit-grid article > i {
+    font-size: 29px;
+}
+
+.process-step-icon,
+.process-card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+}
+
+.local-info-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+}
+
+.local-phone-card .local-info-icon,
+.local-phone-card .local-info-icon i {
+    display: grid;
+    place-items: center;
+    color: #721b36 !important;
+    line-height: 1;
+}
+
+@media (max-width: 767px) {
+    .inner-service-icon,
+    .value-grid article > i,
+    .service-card .service-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 23px;
+    }
+
+    .contact-card-grid > a > span {
+        width: 54px;
+        height: 54px;
+        font-size: 21px;
+    }
+
+    .inner-service-card,
+    .value-grid article {
+        min-height: 0;
+        padding: 26px;
+    }
+
+    .inner-service-card h3,
+    .value-grid h3 {
+        font-size: 20px;
+    }
+
+    .inner-service-card p,
+    .value-grid p {
+        font-size: 15.5px;
+    }
+}
